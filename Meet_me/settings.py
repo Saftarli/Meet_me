@@ -29,7 +29,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 DEBUG = env.bool('DEBUG',False)
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS', cast=list)
-CSRF_TRUSTED_ORIGINS = env ('ALLOWED_HOSTS', cast=list)
+CSRF_TRUSTED_ORIGINS = env ('CSRF_TRUSTED_ORIGINS', cast=list)
 
 
 # Application definition
