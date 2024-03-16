@@ -28,6 +28,8 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG',False)
 
+ALLOWED_HOSTS = env('ALLOWED_HOSTS', cast=list)
+CSRF_TRUSTED_ORIGINS = env ('ALLOWED_HOSTS', cast=list)
 
 
 # Application definition
@@ -107,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'az'
 
 TIME_ZONE = 'UTC'
 
