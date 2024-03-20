@@ -1,18 +1,18 @@
 FROM python:3.10-slim
 
-RUN apt update
+RUN apt-get update
 
-RUN apt install python3-dev build-essential -y
+RUN apt-get install python3-dev build-essential -y
 
 ENV PYTHONDONTWRITEBYTECODE 1
-ENV VIRTUAL-ENV=/opt/venv
+ENV VIRTUAL_ENV=/opt/venv
 
-RUN pip install --upgrade pip
-RUN pip install virtualenv && python -m virtualenv $VIRTUAL-ENV
+RUN pip3 install --upgrade pip
+RUN pip3 install virtualenv && python3 -m virtualenv $VIRTUAL_ENV
 
-ENV PAtH='$VIRTUAL-ENV/bin:$PAtH'
+ENV PAtH='$VIRTUAL_ENV/bin:$PAtH'
 ADD ./requirements.txt /tmp/requirements.txt
-RUN pip install -r /tmp/requirements.txt
+RUN pip3 install -r /tmp/requirements.txt
 
 COPY . /srv/app
 WORKDIR /srv/app
